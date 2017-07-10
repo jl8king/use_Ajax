@@ -1,0 +1,19 @@
+主要是讲了如何使用常用前端框架中自带的Ajax
+查看结果请在浏览器中审核元素之后点击Console选项卡查看或者按F12
+
+需要下载的包
+1、npm指令
+	当你安装了nodejs那么cmd命令就有了npm这个指令
+2、下载淘宝镜像cnpm
+	npm install -g cnpm --registry=https://registry.npm.taobao.org
+3、下载要使用到的包
+	1)nodejs框架:express
+		cnpm install --save express
+	2)body中间键post传值是所用的：body-parser
+		cnpm install --save body-parser
+		a. 使用方式
+			var bodyParser = require('body-parser');
+			app.use(express.static('public'));
+			app.use(bodyParser.urlencoded({extended: true}));
+			app.use(bodyParser.json());
+

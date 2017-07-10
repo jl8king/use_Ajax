@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="./js/angular.min.js"></script>
+</head>
+<body ng-app='myApp' ng-controller="contr1">
+	<script>
+		var myModule = angular.module("myApp",[]);
+		myModule.controller('contr1',function($scope,$http){
+			//get
+			$http({
+				method:'get',
+				url:'/ajaxGet',
+				params:{sadx:'angluar的get的方式'}
+			}).then(function(reqdata){
+				//成功的返回值
+				console.log(reqdata.data);
+			},function(errordata){
+				//失败的返回值
+				console.log(errordata);
+			});
+			//post
+			$http({
+				method:'post',
+				url:'/ajaxPost',
+				data:{sadx:'angluar的post的方式'}
+			}).success(function(reqdata){
+				//成功的返回值
+				console.log(reqdata);
+			}).error(function(errordata){
+				//失败的返回值
+				console.log(errordata);
+			});
+		});
+	</script>
+</body>
+</html>

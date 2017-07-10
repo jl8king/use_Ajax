@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		(function(){
+			var xmlhttp;
+			if(window.XMLHttpRequest){
+				//IE7以上的浏览器和其他的浏览器
+				xmlhttp = new XMLHttpRequest();
+			}else{
+				//IE7及其以下的浏览器和其他的浏览器
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.onreadystatechange = function(){
+				if (xmlhttp.readyState==4 && xmlhttp.status==200){
+					console.log(xmlhttp.responseText);
+				}
+			}
+			//get的方式发送
+			xmlhttp.open("GET","/ajaxGet?get的方式=322837",true);
+			xmlhttp.send();
+			//post的方式发送
+			/*xmlhttp.open("post","/ajaxPost",true);
+			xmlhttp.send("user_data=post的方式");*/
+		})();
+	</script>
+</body>
+</html>

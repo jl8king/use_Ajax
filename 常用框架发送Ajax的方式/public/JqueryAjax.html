@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="./js/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+	<script>
+		//get和post通用
+		$.ajax({
+			type:'get',
+			url:'/ajaxHello',
+			data:{datas:'成功'},
+			success:function(response){
+				var temp = response;
+				console.log(temp);
+			}
+		});
+		//get的方式
+		$.get('/ajaxGet',{sadx:'get的方式'},function(data){
+			console.log(data);
+		});
+		//post的方式
+		$.post('/ajaxPost',{sadx:'post的方式'},function(data){
+			console.log(data);
+		});
+	</script>
+</body>
+</html>

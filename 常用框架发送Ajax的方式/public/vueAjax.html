@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="./js/vue.js"></script>
+	<script src='./js/vue-resource.min.js'></script>
+</head>
+<body>
+	<div id="app">
+		<button @click="jsonps();">发送</button>
+	</div>
+	<script>
+		var vueObj = new Vue({
+			//get方式的不简写
+			created:function(){
+				this.$http({
+					method:'get',
+					url:'/ajaxGet',
+					params:{sad:'Vue框架的get方式'}
+				}).then(function(response){
+					console.log(response.bodyText);
+				},function(error){
+					console.log(error);
+				});
+			},
+			//post方式的简写
+			beforeCreate:function(){
+				this.$http.post('/ajaxPost',
+					{sad:'Vue框架的Post方式'},
+					{emulateJSON:true}).then(function(response){
+					console.log(response.bodyText);
+				},function(error){
+					console.log(error);
+				});
+			}
+		});
+		new Vue({
+			el:"#app",
+			data:{},
+			methods:{
+				//jsonp
+				jsonps:function(){
+					this.$http.jsonp('https://sug.so.360.cn/suggest',
+						{word:'a'},
+						{jsonp:'callback'}
+					).then(function(res){
+                        console.log(res.data);
+                    },function(res){
+                        console.log(res.status);
+                    });
+				}			
+			}
+		});
+	</script>
+</body>
+</html>
