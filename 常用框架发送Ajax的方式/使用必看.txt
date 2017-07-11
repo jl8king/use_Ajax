@@ -1,17 +1,19 @@
-Ö÷ÒªÊÇ½²ÁËÈçºÎÊ¹ÓÃ³£ÓÃÇ°¶Ë¿ò¼ÜÖĞ×Ô´øµÄAjax
-²é¿´½á¹ûÇëÔÚä¯ÀÀÆ÷ÖĞÉóºËÔªËØÖ®ºóµã»÷ConsoleÑ¡Ïî¿¨²é¿´»òÕß°´F12
+æœ¬å®ä¾‹ä¸»è¦ç”¨çš„åå°è¯­è¨€æ˜¯nodejs
+ä¸»è¦æ˜¯è®²äº†å¦‚ä½•ä½¿ç”¨å¸¸ç”¨å‰ç«¯æ¡†æ¶ä¸­è‡ªå¸¦çš„Ajax
+æŸ¥çœ‹ç»“æœè¯·åœ¨æµè§ˆå™¨ä¸­å®¡æ ¸å…ƒç´ ä¹‹åç‚¹å‡»Consoleé€‰é¡¹å¡æŸ¥çœ‹æˆ–è€…æŒ‰F12
 
-ĞèÒªÏÂÔØµÄ°ü
-1¡¢npmÖ¸Áî
-	µ±Äã°²×°ÁËnodejsÄÇÃ´cmdÃüÁî¾ÍÓĞÁËnpmÕâ¸öÖ¸Áî
-2¡¢ÏÂÔØÌÔ±¦¾µÏñcnpm
+
+éœ€è¦ä¸‹è½½çš„åŒ…
+1ã€npmæŒ‡ä»¤
+	å½“ä½ å®‰è£…äº†nodejsé‚£ä¹ˆcmdå‘½ä»¤å°±æœ‰äº†npmè¿™ä¸ªæŒ‡ä»¤
+2ã€ä¸‹è½½æ·˜å®é•œåƒcnpm
 	npm install -g cnpm --registry=https://registry.npm.taobao.org
-3¡¢ÏÂÔØÒªÊ¹ÓÃµ½µÄ°ü
-	1)nodejs¿ò¼Ü:express
+3ã€ä¸‹è½½è¦ä½¿ç”¨åˆ°çš„åŒ…
+	1)nodejsæ¡†æ¶:express
 		cnpm install --save express
-	2)bodyÖĞ¼ä¼üpost´«ÖµÊÇËùÓÃµÄ£ºbody-parser
+	2)bodyä¸­é—´é”®postä¼ å€¼æ˜¯æ‰€ç”¨çš„ï¼šbody-parser
 		cnpm install --save body-parser
-		a. Ê¹ÓÃ·½Ê½
+		a. ä½¿ç”¨æ–¹å¼
 			var bodyParser = require('body-parser');
 			app.use(express.static('public'));
 			app.use(bodyParser.urlencoded({extended: true}));
